@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void insertionSort(vector<int> &arr, int n) {
+int insertionSort(vector<int> &arr, int n) {
+ 
     int i, key, j;
     for (i = 1; i < n; i++) {
         key = arr[i];
@@ -14,7 +15,9 @@ void insertionSort(vector<int> &arr, int n) {
             j = j - 1;
         }
         arr[j + 1] = key;
+       
     }
+   
 }
 void solve(){
   int n ;
@@ -39,16 +42,8 @@ void solve(){
       
   }
    insertionSort(w,n);
-   if( k >= k1){
-      for(int i=0; i<n -1; i++){
-        cout << w[i] << " " ;
-      }
-      cout << k ; 
-      cout << endl ;
-      return;
-   }
    v.push_back(w) ;
-   for(int i = n - 2; i >0; i--){
+   for(int i = n - 2; i >=0; i--){
       if( k <= w[i-1] ){
         w[i] = w[i-1];
         v.push_back(w);
