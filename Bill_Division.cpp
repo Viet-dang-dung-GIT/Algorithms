@@ -2,11 +2,12 @@
 using namespace std;
 
 void bill_Div(int n, vector<int> bill , int charged , int k) {
-  int sum = 0 ;
+  int res ;
   string sumStr = "Bon Appetit";
-  sum = accumulate( bill.begin(), bill.end(), sum) ;
-  if( charged - (sum - bill[k] / 2) > 0 ){
-    cout <<  charged - (sum - bill[k] / 2);
+  
+  res = (accumulate( bill.begin(), bill.end(), 0) - bill[k]) / 2;
+  if( abs(charged  - res) != 0 ){
+    cout << abs(charged-res);
   } 
   else{
     cout << sumStr;
